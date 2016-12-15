@@ -1,12 +1,12 @@
 import * as configUtil from "./lib/config";
 import { Application } from "./lib/application";
-import downloaderMiddle from "../downloader/app";
-import downloaderAnalysisMiddle from "../downloader-analysis/app";
-import htmlAnalysisMiddle from "../html-analysis/app";
-import urlAnalysisMiddle from "../url-analysis/app";
+import downloaderMiddle from "crawler-downloader";
+import downloaderAnalysisMiddle from "crawler-downloader-analysis";
+import htmlAnalysisMiddle from "crawler-html-analysis";
+import urlAnalysisMiddle from "crawler-url-analysis";
 import { Client } from "eureca.io";
-import resultStoreMiddle, { queueResultUrl } from "../result-store/app";
-import aiAnalysisMiddle from "../ai-analysis/app";
+import resultStoreMiddle, { queueResultUrl } from "crawler-result-store";
+import aiAnalysisMiddle from "crawler-ai-analysis";
 import boom from "boom";
 
 const app = new Application();
