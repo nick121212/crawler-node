@@ -1,7 +1,7 @@
 {
-    "name": "ff-crawler",
+    "name": "crawler-node",
     "version": "1.0.0",
-    "description": "爬虫",
+    "description": "爬虫节点",
     "main": "index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1"
