@@ -3,8 +3,3 @@
 # dependencies:
 ## 1、nodejs > 5.0.0
 ## 2、elasticsearch > 2.4
-
-
-git add .
-git commit -m "babel built"
-git push -u origin master
