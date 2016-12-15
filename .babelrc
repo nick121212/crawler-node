@@ -1,0 +1,22 @@
+{
+    "presets": [
+        "stage-3",
+        "es2015"
+    ],
+    "sourceMaps": true,
+    "plugins": [
+        [
+            // "transform-strict-mode",
+            // "transform-es2015-modules-commonjs",
+            // "transform-es2015-spread",
+            // "transform-es2015-destructuring",
+            // "transform-es2015-parameters",
+            "transform-runtime",
+            {
+                "polyfill": true,
+                "regenerator": true
+            }
+
+        ]
+    ]
+}

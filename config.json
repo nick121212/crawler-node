@@ -1,0 +1,20 @@
+{
+    "schedule": {
+        "uri": "http://localhost:3001/",
+        "prefix": "eureca.io",
+        "transport": null
+    },
+    "elastic": {
+        "host": "106.75.78.203",
+        "port": 9200
+    },
+    "mq": {
+        "host": "106.75.78.203",
+        "user": "nick",
+        "password": "111111"
+    },
+    "download": {
+        "name": "crawler.urls.2016-10-28-zhongyuan",
+        "settings": {}
+    }
+}
