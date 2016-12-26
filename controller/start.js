@@ -1,5 +1,5 @@
-import downloaderMiddle from "../../crawler-downloader/src/app";
-import downloaderAnalysisMiddle from "../../crawler-downloader-analysis/src/app";
+import downloaderMiddle from "crawler-downloader";
+import downloaderAnalysisMiddle from "crawler-downloader-analysis";
 import htmlAnalysisMiddle from "crawler-html-analysis";
 import urlAnalysisMiddle from "crawler-url-analysis";
 import { queueStoreUrls, saveQueueItem, saveResults, saveUrls } from "crawler-result-store";
