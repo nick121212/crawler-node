@@ -36,6 +36,7 @@
     "composition": "^2.3.0",
     "connect": "^3.5.0",
     "crawler-ai-analysis": "^1.0.1",
+    "crawler-common": "^1.0.3",
     "crawler-downloader": "^1.0.1",
     "crawler-downloader-analysis": "^1.0.1",
     "crawler-html-analysis": "^1.0.1",
@@ -43,8 +44,11 @@
     "crawler-url-analysis": "^1.0.1",
     "eureca.io": "^0.6.42",
     "koa-compose": "^3.2.1",
+    "lolex": "^1.5.2",
+    "nspa": "^1.0.0",
     "socket.io": "^1.7.1",
     "sockjs": "^0.3.18",
-    "sockjs-client": "^1.1.1"
+    "sockjs-client": "^1.1.1",
+    "waitjs": "^0.2.0"
   }
 }
