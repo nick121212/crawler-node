@@ -1,23 +1,23 @@
 {
-  "schedule": {
-    "uri": "http://localhost:3001/",
-    "prefix": "eureca.io",
-    "transport": null
-  },
-  "elastic": {
-    "host": "106.75.78.203",
-    "port": 9200
-  },
-  "mq": {
-    "host": "106.75.78.203",
-    "user": "nick",
-    "password": "111111",
-    "name": "crawler.urls.",
-    "settings": {}
-  },
-  "download": {
-    "name": "crawler.urls.2016-10-28-zhongyuan",
-    "settings": {},
-    "maxSockets": 2
-  }
+    "schedule": {
+        "uri": "http://localhost:3005/",
+        "prefix": "eureca.io",
+        "transport": null
+    },
+    "elastic": {
+        "host": "172.16.140.164",
+        "port": 9200
+    },
+    "mq": {
+        "host": "172.16.140.164",
+        "user": "nick",
+        "password": "111111",
+        "name": "ff.crawler.urls.",
+        "settings": {}
+    },
+    "download": {
+        "name": "crawler.urls.",
+        "settings": {},
+        "maxSockets": 2
+    }
 }

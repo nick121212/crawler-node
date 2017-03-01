@@ -1,9 +1,9 @@
 import downloaderMiddle from "crawler-downloader";
 import downloaderAnalysisMiddle from "crawler-downloader-analysis";
-import htmlAnalysisMiddle from "crawler-html-analysis";
+// import htmlAnalysisMiddle from "crawler-html-analysis";
 import urlAnalysisMiddle from "crawler-url-analysis";
 import { queueStoreUrls, saveQueueItem, saveResults, saveUrls } from "crawler-result-store";
-import aiAnalysisMiddle from "crawler-ai-analysis";
+// import aiAnalysisMiddle from "crawler-ai-analysis";
 import spa from "nspa";
 import boom from "boom";
 import _ from "lodash";
@@ -29,14 +29,10 @@ export default async(config) => {
             await next();
         });
         compose.use(downloaderMiddle({}));
-        compose.use(async(ctx, next) => {
-            console.log(ctx.queueItem);
-            await next();
-        });
         compose.use(downloaderAnalysisMiddle({}));
         compose.use(urlAnalysisMiddle({}));
-        compose.use(htmlAnalysisMiddle({}));
-        compose.use(aiAnalysisMiddle({}));
+        // compose.use(htmlAnalysisMiddle({}));
+        // compose.use(aiAnalysisMiddle({}));
 
         compose.use(await saveUrls(config.elastic));
         compose.use(await saveResults(config.elastic));
@@ -57,17 +53,16 @@ export default async(config) => {
         }
 
         let fn = compose.callback();
-
-        await fn({
+        let res = await fn({
             routerKey: "startCompose",
             context: {},
             params: ctx.params
         });
+        if (res.isError) {
+            throw res.err;
+        }
+        ctx.body = _.extend({}, { errorCount: res.queueItem.errCount || 0 }, res.body);
 
-        compose.once("complete", async(res) => {
-            ctx.body = _.extend({}, res.errCount, res.body);
-
-            await next();
-        });
+        await next();
     };
 };

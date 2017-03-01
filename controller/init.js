@@ -9,7 +9,7 @@ export default async(config) => {
             super();
         }
         onError(err, ctx) {
-            console.log(err);
+            // console.log(err);
             super.onError(err, ctx);
         }
     }
@@ -46,15 +46,16 @@ export default async(config) => {
         }
         let fn = compose.callback();
 
-        compose.once("complete", async(res) => {
-            ctx.body = res.body;
-            await next();
-        });
-
-        await fn({
+        let res = await fn({
             routerKey: "startCompose",
             context: {},
             params: ctx.params
         });
+        if (res.isError) {
+            throw res.err;
+        }
+        ctx.body = res.body;
+
+        await next();
     };
 };
